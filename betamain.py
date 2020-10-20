@@ -4,15 +4,15 @@ from discord.ext import commands
 import pickle
 import render
 import asyncio
-from DiscordGameEngine.MutiplayerManager import Game
-from DiscordGameEngine import Scene
+from DiscordGameEngine import Scene, Game
 
 TOKEN = "NzY2NzIxMTU4MTU3Njk3MDU0.X4neuQ.upvwcJVs2sNauP83cV4CLTBjK1A"
 intents = discord.Intents(members=True, messages=True, guilds=True, reactions=True)
 bot = commands.Bot(command_prefix=',', intents=intents)
 
-Serv1Scene = Scene.
-Serv1 = Game.ServerGame()
+Servers = []
+
+
 
 Messages = {
     "Host_gameend": "Forcefully disconnected from the server.\nHost requested a forceful Game End."
@@ -45,13 +45,7 @@ async def on_ready():
     print("CONNECTION")
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name=" over games..."))
     while True:
-        for m in range(0, len(savegame[0])):
-            for y in range(0, len(savegame[0][m][1])):
-                if not savegame[0][m][1][y][1]:
-                    Creater = bot.get_user(id=savegame[0][m][1][0][0])
-                    await Creater.send(bot.get_user(id=savegame[0][m][1][y][0]).name + " has joined the game")
-                    savegame[0][m][1][y][1] = True
-        await asyncio.sleep(1)
+        pass
 
 
 @bot.command()

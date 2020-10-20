@@ -81,14 +81,7 @@ async def on_ready():
 
 @bot.command()
 async def creategame(ctx):
-    CODE = LetterList[random.randint(0, len(LetterList) - 1)] + \
-           LetterList[random.randint(0, len(LetterList) - 1)] + \
-           LetterList[random.randint(0, len(LetterList) - 1)] + \
-           LetterList[random.randint(0, len(LetterList) - 1)] + \
-           LetterList[random.randint(0, len(LetterList) - 1)] + \
-           LetterList[random.randint(0, len(LetterList) - 1)]
-    await ctx.author.send("Your code is: " + CODE)
-    #            SERVER CODE,   Id, Is In?, Pos, Tasks
+    CODE = "DONE"
     savegame[0].append([CODE, [[ctx.author.id, True, 0, 0, []]], [False]])
     savegame[1].append([ctx.author.id, CODE])
 

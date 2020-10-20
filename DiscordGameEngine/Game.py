@@ -1,14 +1,24 @@
 import random
+from PIL import Image
+
+
 
 
 class ClientGame:
-    def __init__(self, server):
-        self.server = server
-        self.CODE = server.Code
-        pass
+    def __init__(self, png, x = 0, y = 0, other = []):
+        self.x = x
+        self.y = y
+        self.other = other
+        self.png = png
+
+        self.pngimage = Image.open(png)
+
+        self.getservping = False
+        self.sendservping = False
 
     def start(self):
-        pass
+        self.sendservping = True
+
 
 
 class ServerGame:
@@ -19,6 +29,8 @@ class ServerGame:
         self.LetterList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",
                            "S", "T", "U", "V", "W", "X", "Y", "Z"]
         self.code = "######"
+
+
         self.save = []
 
     def setup(self):
